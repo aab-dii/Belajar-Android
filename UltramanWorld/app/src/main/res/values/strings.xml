@@ -1,19 +1,22 @@
 <resources>
-    <string name="app_name">MyRecyclerView</string>
-    <string name="heroes_name">Nama Pahlawan</string>
+    <string name="app_name">Ultraman World</string>
+    <string name="films_name">Nama Film</string>
+    <string name="description">Deskripsi Film</string>
+    <string name="rating">Rating: </string>
     <string name="list">List</string>
     <string name="grid">Grid</string>
-    <string name="description">Deskripsi</string>
+    <string name="synopsis">Sinopsis: </string>
     <string-array name="data_name">
-        <item>Ahmad Dahlan</item>
-        <item>Ahmad Yani</item>
-        <item>Sutomo</item>
-        <item>Gatot Soebroto</item>
-        <item>Ki Hadjar Dewantara</item>
-        <item>Mohammad Hatta</item>
-        <item>Soedirman</item>
-        <item>Soekarno</item>
-        <item>Soepomo</item>
+        <item>Ultraman Tiga (1996)</item>
+        <item>Ultraman Cosmos (2001)</item>
+        <item>Ultraman Zero: The Revenge of Belial (2010)</item>
+        <item>Ultraman Ginga (2013)</item>
+        <item>Ultraman Ginga S (2014)</item>
+        <item>Ultraman X (2015)</item>
+        <item>Ultraman Orb (2016)</item>
+        <item>Ultraman Geed (2017)</item>
+        <item>Ultraman R/B (2018)</item>
+        <item>Ultraman Z (2020)</item>
     </string-array>
     <string-array name="data_description">
         <item>Tiga puluh juta tahun yang lalu ketika alam semesta terancam oleh dua monster yang mengerikan, Ancient Ultra Warriors yang misterius muncul dan mengalahkan para monster. Ultra Warriors kemudian menciptakan Pyramid of Light di Land of Tiga dan tetap di sana menunggu untuk dipanggil lagi. Pada awal abad ke-21, dua monster besar muncul kembali, menghancurkan semua yang ada di jalan mereka. Bahkan persenjataan super Global Unlimited Task Squad (nama kode: GUTS) tidak dapat menghentikan mereka. Selama pertempuran di dekat piramida emas kuno, terjadi kesalahan. Daigo, petarung muda paling berani di Tim GUTS, bergabung dengan patung terakhir dari salah satu Ancient Ultra Warriors. Ultraman Tiga yang perkasa lahir! Sekarang ketika bahaya menyerang, Daigo mengangkat tinggi Spark Lance dan berubah menjadi Ultraman Tiga!</item>
@@ -25,18 +28,33 @@
         <item>Naomi Yumeno (Miyabi Matsuura) mengalami mimpi aneh yang sama sejak ia masih muda: penglihatan tentang raksasa cahaya yang bersinar melawan monster raksasa. Dengan ketertarikannya yang dipicu oleh mimpi-mimpi itu, ia memulai situs web pelacakan fenomena paranormal yang disebut "Something Search People" bersama teman-temannya Jetta Hayami (Naoto Takahashi) dan Shin Matsudo (Hiroaki Nerio). Suatu hari, ketiganya membuntuti seekor hewan misterius tak dikenal yang diduga menyebabkan aktivitas meteorologi aneh. Mereka mengabaikan peringatan paman NAomi, Ittetsu Shibukawa (Shingo Yanagisawa), seorang anggota tim investigasi khusus VTL, dan menuju ke pusat cuaca aneh itu. Di sana, mereka tiba-tiba bertemu dengan Raja Iblis Binatang Angin, Maga-Basser! Naomi diterjang angin ganas itu tetapi diselamatkan oleh pengembara, Gai Kuernai (Hideo Ishiguro). Dengan menggunakan Orb Ring miliknya untuk membaca kekuatan dua Ultra Hero sebelumnya, Gai mampu melakukan Fusion Up menjadi seorang prajurit cahaya dari galaksi yang jauh, Ultraman Orb!</item>
         <item>Ini adalah kisah tentang seorang pahlawan yang mewarisi Ultraman Belial, gen Ultraman yang jahat. Meskipun menderita kemunduran dan keputusasaan yang berulang karena mengetahui rahasia kelahirannya dan nasibnya yang kejam, ia tidak pernah melupakan persahabatan dan keinginan kuat untuk menjadi pahlawan sejati. Kisah ini terungkap melalui pertumbuhan spiritual sang protagonis yang mencari makna hidupnya sendiri dan menemukan tempat di mana ia seharusnya berada, melalui perjuangan melawan kejahatan dan takdirnya yang terkutuk, untuk menjadi pahlawan keadilan: Ultraman Geed.</item>
         <item>Keluarga selalu ada di sekitar kita dan karenanya mereka cenderung dianggap remeh. Ini adalah kisah tentang saudara laki-laki, yang berkisar pada tema utama "Ikatan" dan "Cinta". Saat saudara-saudara itu berkonflik dengan teman dan musuh yang berkemauan keras, mereka mulai menyadari pentingnya hal-hal yang cenderung mereka lupakan. Saudara-saudara itu, Katsumi dan Isami, tinggal bersama ayah dan adik perempuan mereka, tetapi ibu mereka menghilang secara misterius 15 tahun yang lalu. Suatu hari, saudara-saudara itu bertemu dengan monster dan hampir kehilangan nyawa mereka di gunung. Kemudian, dua benda transformasi muncul di sana secara tiba-tiba, dan saudara-saudara itu akan terjun ke dunia pertempuran sebagai Ultraman...</item>
+        <item>Di masa lalu yang jauh, iblis yang mengerikan hancur setelah pertempuran yang menghancurkan. Saat ini, serpihan musuh yang kuat itu masih menyebabkan kekacauan di seluruh alam semesta. Sementara para Pahlawan Ultra berjuang untuk memulihkan perdamaian ke galaksi, ancaman baru yang misterius menggunakan serpihan ini dalam rencana tercela untuk menghancurkan planet satu per satu. Dan sekarang, makhluk jahat itu mendekati Tanah Cahaya. Di jalannya berdiri Ultraman Zero yang gagah berani dan muridnya, Ultraman Z (Zett). Di akhir pertempuran sengit, Z mengejar monster itu sendirian, menuju Bumi… Sementara itu di Bumi, pasukan robot anti-monster STORAGE telah dibentuk untuk menghadapi ancaman monster biasa, dan baru saja bergabung dengan rekrutan terbarunya, pemuda berdarah panas Haruki Natsukawa. Ketika monster dari luar angkasa menyerang Bumi, Z dan Haruki mengalami pertemuan yang menentukan. Di sinilah kisah luar biasa dari pertempuran dua pahlawan muda kita dimulai!</item>
+    </string-array>
+    <string-array name="data_rating">
+        <item>4.5</item>
+        <item>4.5</item>
+        <item>4.5</item>
+        <item>4.5</item>
+        <item>4.5</item>
+        <item>4.5</item>
+        <item>4.5</item>
+        <item>4.5</item>
+        <item>4.5</item>
+        <item>4.5</item>
+    </string-array>
+    <integer-array name="data_photo">
+        <item>@drawable/tiga_series</item>
+        <item>@drawable/cosmos_series</item>
+        <item>@drawable/zero_movies</item>
+        <item>@drawable/ginga_series</item>
+        <item>@drawable/gingas_series</item>
+        <item>@drawable/x_series</item>
+        <item>@drawable/orb_series</item>
+        <item>@drawable/geed_series</item>
+        <item>@drawable/rb_series</item>
+        <item>@drawable/z_series</item>
+    </integer-array>
+    <string name="dev_name">Muhammad Abdillah</string>
+    <string name="dev_email">mabdillahabdi600@gmail.com</string>
 
-    </string-array>
-    <string-array name="data_photo">
-        <item>https://upload.wikimedia.org/wikipedia/commons/8/87/Ahmad_Dahlan.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/commons/3/3f/Ahmad_Yani.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/commons/e/ed/Bung_Tomo.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/commons/b/be/Col_Gatot_Subroto%2C_Kenang-Kenangan_Pada_Panglima_Besar_Letnan_Djenderal_Soedirman%2C_p27.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/commons/3/3a/Ki_Hadjar_Dewantara_Mimbar_Umum_18_October_1949_p2.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/VP_Hatta.jpg/330px-VP_Hatta.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Sudirman.jpg/486px-Sudirman.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Presiden_Sukarno.jpg/330px-Presiden_Sukarno.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/commons/a/a6/Supomo.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/TanMalaka_DariPendjara_ed3.jpg/330px-TanMalaka_DariPendjara_ed3.jpg</item>
-    </string-array>
 </resources>
