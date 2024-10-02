@@ -10,7 +10,8 @@
     android:layout_marginTop="4dp"
     android:layout_marginEnd="8dp"
     android:layout_marginBottom="4dp"
-    card_view:cardCornerRadius="4dp">
+    android:layout_marginHorizontal="8dp"
+    card_view:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -19,8 +20,8 @@
 
         <ImageView
             android:id="@+id/img_item_photo"
-            android:layout_width="288dp"
-            android:layout_height="321dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
             android:scaleType="centerCrop"
             card_view:layout_constraintDimensionRatio="1:1"
             card_view:layout_constraintEnd_toEndOf="parent"
@@ -32,12 +33,17 @@
 
         <TextView
             android:id="@+id/tv_item_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:textSize="16sp"
             android:textStyle="bold"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toBottomOf="@id/img_item_photo"
             tools:text="@string/films_name" />
@@ -46,22 +52,24 @@
             android:id="@+id/tv_item_rating"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="4dp"
             android:textSize="16sp"
             android:textStyle="bold"
-            card_view:layout_constraintBottom_toBottomOf="parent"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@id/tv_item_name"
+            card_view:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            card_view:layout_constraintStart_toEndOf="@+id/imageView2"
+            card_view:layout_constraintTop_toTopOf="@+id/imageView2"
             tools:text="@string/rating" />
 
         <ImageView
+            android:id="@+id/imageView2"
             android:layout_width="18dp"
             android:layout_height="18dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
             android:src="@drawable/star"
-            card_view:layout_constraintStart_toEndOf="@+id/tv_item_rating"
-            card_view:layout_constraintTop_toTopOf="@+id/tv_item_rating" />
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintStart_toStartOf="@+id/tv_item_name"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_item_name" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

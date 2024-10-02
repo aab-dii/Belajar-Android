@@ -1,9 +1,8 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.UltramanWorld" parent="Theme.Material3.DayNight">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<resources>
+    <style name="Theme.UltramanWorld" parent="Theme.AppCompat.NoActionBar">
+        <!-- Kustomisasi tema Anda di sini -->
+<!--        <item name="colorPrimary">@color/your_color_primary</item>-->
+<!--        <item name="colorPrimaryDark">@color/your_color_primary_dark</item>-->
+<!--        <item name="colorAccent">@color/your_color_accent</item>-->
     </style>
-
-    <style name="Theme.UltramanWorld" parent="Base.Theme.UltramanWorld" />
 </resources>

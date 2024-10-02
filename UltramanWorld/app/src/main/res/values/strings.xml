@@ -2,21 +2,23 @@
     <string name="app_name">Ultraman World</string>
     <string name="films_name">Nama Film</string>
     <string name="description">Deskripsi Film</string>
-    <string name="rating">Rating: </string>
+    <string name="rating">Rating</string>
+    <string name="year">Tahun</string>
     <string name="list">List</string>
     <string name="grid">Grid</string>
+    <string name="episode">Episode</string>
     <string name="synopsis">Sinopsis: </string>
     <string-array name="data_name">
-        <item>Ultraman Tiga (1996)</item>
-        <item>Ultraman Cosmos (2001)</item>
-        <item>Ultraman Zero: The Revenge of Belial (2010)</item>
-        <item>Ultraman Ginga (2013)</item>
-        <item>Ultraman Ginga S (2014)</item>
-        <item>Ultraman X (2015)</item>
-        <item>Ultraman Orb (2016)</item>
-        <item>Ultraman Geed (2017)</item>
-        <item>Ultraman R/B (2018)</item>
-        <item>Ultraman Z (2020)</item>
+        <item>Ultraman Tiga</item>
+        <item>Ultraman Cosmos</item>
+        <item>Ultraman Zero: The Revenge of Belial</item>
+        <item>Ultraman Ginga</item>
+        <item>Ultraman Ginga S</item>
+        <item>Ultraman X</item>
+        <item>Ultraman Orb</item>
+        <item>Ultraman Geed</item>
+        <item>Ultraman R/B</item>
+        <item>Ultraman Z</item>
     </string-array>
     <string-array name="data_description">
         <item>Tiga puluh juta tahun yang lalu ketika alam semesta terancam oleh dua monster yang mengerikan, Ancient Ultra Warriors yang misterius muncul dan mengalahkan para monster. Ultra Warriors kemudian menciptakan Pyramid of Light di Land of Tiga dan tetap di sana menunggu untuk dipanggil lagi. Pada awal abad ke-21, dua monster besar muncul kembali, menghancurkan semua yang ada di jalan mereka. Bahkan persenjataan super Global Unlimited Task Squad (nama kode: GUTS) tidak dapat menghentikan mereka. Selama pertempuran di dekat piramida emas kuno, terjadi kesalahan. Daigo, petarung muda paling berani di Tim GUTS, bergabung dengan patung terakhir dari salah satu Ancient Ultra Warriors. Ultraman Tiga yang perkasa lahir! Sekarang ketika bahaya menyerang, Daigo mengangkat tinggi Spark Lance dan berubah menjadi Ultraman Tiga!</item>
@@ -42,6 +44,30 @@
         <item>4.5</item>
         <item>4.5</item>
     </string-array>
+    <string-array name="data_year">
+        <item>1996</item>
+        <item>2001</item>
+        <item>2010</item>
+        <item>2013</item>
+        <item>2014</item>
+        <item>2015</item>
+        <item>2016</item>
+        <item>2017</item>
+        <item>2018</item>
+        <item>2020</item>
+    </string-array>
+    <string-array name="data_episode">
+        <item>24</item>
+        <item>24</item>
+        <item>24</item>
+        <item>24</item>
+        <item>24</item>
+        <item>24</item>
+        <item>24</item>
+        <item>24</item>
+        <item>24</item>
+        <item>24</item>
+    </string-array>
     <integer-array name="data_photo">
         <item>@drawable/tiga_series</item>
         <item>@drawable/cosmos_series</item>
@@ -54,7 +80,21 @@
         <item>@drawable/rb_series</item>
         <item>@drawable/z_series</item>
     </integer-array>
+    <string-array name="data_jenis">
+        <item>Series</item>
+        <item>Series</item>
+        <item>Movie</item>
+        <item>Series</item>
+        <item>Series</item>
+        <item>Series</item>
+        <item>Series</item>
+        <item>Series</item>
+        <item>Series</item>
+        <item>Series</item>
+    </string-array>
     <string name="dev_name">Muhammad Abdillah</string>
     <string name="dev_email">mabdillahabdi600@gmail.com</string>
+    <string name="share">Share</string>
+    <string name="about_page">About Page</string>
 
 </resources>
