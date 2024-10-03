@@ -33,16 +33,16 @@
         <item>Di masa lalu yang jauh, iblis yang mengerikan hancur setelah pertempuran yang menghancurkan. Saat ini, serpihan musuh yang kuat itu masih menyebabkan kekacauan di seluruh alam semesta. Sementara para Pahlawan Ultra berjuang untuk memulihkan perdamaian ke galaksi, ancaman baru yang misterius menggunakan serpihan ini dalam rencana tercela untuk menghancurkan planet satu per satu. Dan sekarang, makhluk jahat itu mendekati Tanah Cahaya. Di jalannya berdiri Ultraman Zero yang gagah berani dan muridnya, Ultraman Z (Zett). Di akhir pertempuran sengit, Z mengejar monster itu sendirian, menuju Bumi… Sementara itu di Bumi, pasukan robot anti-monster STORAGE telah dibentuk untuk menghadapi ancaman monster biasa, dan baru saja bergabung dengan rekrutan terbarunya, pemuda berdarah panas Haruki Natsukawa. Ketika monster dari luar angkasa menyerang Bumi, Z dan Haruki mengalami pertemuan yang menentukan. Di sinilah kisah luar biasa dari pertempuran dua pahlawan muda kita dimulai!</item>
     </string-array>
     <string-array name="data_rating">
+        <item>4.3</item>
+        <item>4.7</item>
+        <item>4.2</item>
+        <item>4.1</item>
+        <item>5.0</item>
+        <item>4.9</item>
         <item>4.5</item>
-        <item>4.5</item>
-        <item>4.5</item>
-        <item>4.5</item>
-        <item>4.5</item>
-        <item>4.5</item>
-        <item>4.5</item>
-        <item>4.5</item>
-        <item>4.5</item>
-        <item>4.5</item>
+        <item>4.0</item>
+        <item>4.3</item>
+        <item>4.3</item>
     </string-array>
     <string-array name="data_year">
         <item>1996</item>
@@ -57,16 +57,16 @@
         <item>2020</item>
     </string-array>
     <string-array name="data_episode">
-        <item>24</item>
-        <item>24</item>
-        <item>24</item>
-        <item>24</item>
-        <item>24</item>
-        <item>24</item>
-        <item>24</item>
-        <item>24</item>
-        <item>24</item>
-        <item>24</item>
+        <item>52</item>
+        <item>65</item>
+        <item>1</item>
+        <item>12</item>
+        <item>16</item>
+        <item>22</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
+        <item>25</item>
     </string-array>
     <integer-array name="data_photo">
         <item>@drawable/tiga_series</item>

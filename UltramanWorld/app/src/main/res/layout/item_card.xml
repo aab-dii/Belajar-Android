@@ -3,7 +3,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:layout_marginStart="8dp"
@@ -11,17 +11,17 @@
     android:layout_marginEnd="8dp"
     android:layout_marginBottom="4dp"
     android:layout_marginHorizontal="8dp"
-    card_view:cardCornerRadius="10dp">
+    card_view:cardCornerRadius="10dp"
+    card_view:cardBackgroundColor="@color/black">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="0dp">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/img_item_photo"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_width="150dp"
+            android:layout_height="180dp"
             android:scaleType="centerCrop"
             card_view:layout_constraintDimensionRatio="1:1"
             card_view:layout_constraintEnd_toEndOf="parent"
@@ -46,6 +46,7 @@
             card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toBottomOf="@id/img_item_photo"
+            android:textColor="@color/white"
             tools:text="@string/films_name" />
 
         <TextView
@@ -53,11 +54,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
+            android:layout_marginBottom="8dp"
             android:textSize="16sp"
             android:textStyle="bold"
-            card_view:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/imageView2"
             card_view:layout_constraintTop_toTopOf="@+id/imageView2"
+            android:textColor="@color/white"
             tools:text="@string/rating" />
 
         <ImageView

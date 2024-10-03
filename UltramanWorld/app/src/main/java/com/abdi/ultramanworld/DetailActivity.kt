@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.abdi.ultramanworld.databinding.ActivityDetailBinding
@@ -41,6 +42,21 @@ class DetailActivity : AppCompatActivity() {
         toolbar.setNavigationOnClickListener {
             onBackPressed() // Kembali ke activity sebelumnya
         }
+        // Inisialisasi dan set up UI...
+
+        val shareButton: Button = findViewById(R.id.action_share)
+        shareButton.setOnClickListener {
+            shareText(filmName ?: "Film menarik!")
+        }
+    }
+
+    private fun shareText(text: String) {
+        val shareIntent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, text)
+            type = "text/plain"
+        }
+        startActivity(Intent.createChooser(shareIntent, "Bagikan melalui"))
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
