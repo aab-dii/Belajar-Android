@@ -53,6 +53,7 @@ android {
 
 dependencies {
 
+    implementation (libs.androidx.cardview)
     implementation (libs.androidx.activity.ktx)
     implementation(libs.glide)
     implementation(libs.retrofit)
