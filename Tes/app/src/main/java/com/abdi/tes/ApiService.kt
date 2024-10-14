@@ -9,6 +9,6 @@ interface ApiService {
     fun getEvents(): Call<EventResponse>
 
     @GET("events/{id}")
-    fun getEventsDetail(@Path("id") id: Int): Call<EventDetail>
+    fun getEventsDetail(@Path("id") id: Int): Call<ResponseDetail>
     // Menerima ID
 }

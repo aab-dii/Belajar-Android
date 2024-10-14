@@ -1,13 +1,11 @@
-package com.abdi.dicodingeventapp
+package com.abdi.dicodingeventapp.ui
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.abdi.dicodingeventapp.R
 import com.abdi.dicodingeventapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,23 +15,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Inisialisasi binding
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val toolbar: Toolbar = binding.toolbar
-        setSupportActionBar(toolbar)
-
+        // Setup BottomNavigationView
         val navView: BottomNavigationView = binding.navView
-
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_upcoming, R.id.navigation_finished
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
+
+        // Jangan gunakan setupActionBarWithNavController jika tidak ada ActionBar
         navView.setupWithNavController(navController)
+//        supportActionBar?.hide()
     }
 }

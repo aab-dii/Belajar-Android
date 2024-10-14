@@ -1,70 +1,97 @@
 package com.abdi.dicodingeventapp.ui
 
+import android.content.Intent
+import android.util.Log
 import androidx.recyclerview.widget.ListAdapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import java.text.SimpleDateFormat
-import java.util.Locale
 import com.abdi.dicodingeventapp.databinding.ItemEventBinding
-import com.abdi.dicodingeventapp.response.DetailEventResponse
-import com.abdi.dicodingeventapp.response.ListEventsItem
+import com.abdi.dicodingeventapp.databinding.ItemEventHorizontalBinding // Import layout horizontal
+import com.abdi.dicodingeventapp.data.response.ListEventsItem
+import com.abdi.dicodingeventapp.ui.detail.DetailEventActivity
 import com.bumptech.glide.Glide
 
-class EventsAdapter(private val onItemClick: (DetailEventResponse) -> Unit) : ListAdapter<ListEventsItem, EventsAdapter.EventViewHolder>(DIFF_CALLBACK) {
+class EventsAdapter(private val isUpcoming: Boolean = false) : ListAdapter<ListEventsItem, RecyclerView.ViewHolder>(DIFF_CALLBACK) {
 
-    class EventViewHolder(val binding: ItemEventBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(event: ListEventsItem){
-
+    // ViewHolder untuk finished event
+    class EventViewHolder(private val binding: ItemEventBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(event: ListEventsItem) {
             binding.tvTitle.text = event.name
+
             Glide.with(binding.root.context)
                 .load(event.mediaCover)
                 .into(binding.imgEvent)
+
+            // Aksi saat item diklik
+            binding.root.setOnClickListener {
+                Log.d("EventsAdapter", "Clicked event ID: ${event.id}")
+                val intent = Intent(binding.root.context, DetailEventActivity::class.java).apply {
+                    putExtra("id", event.id)
+                }
+                binding.root.context.startActivity(intent)
+            }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
-        val binding = ItemEventBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return EventViewHolder(binding)
-    }
+    // ViewHolder untuk upcoming event
+    class HomeUpcomingEventViewHolder(private val binding: ItemEventHorizontalBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(event: ListEventsItem) {
+            binding.tvTitle.text = event.name
 
-    override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
-        val event = getItem(position) // Menggunakan getItem dari ListAdapter
-        holder.bind(event)
+            Glide.with(binding.root.context)
+                .load(event.mediaCover)
+                .into(binding.imgEvent)
 
-        holder.itemView.setOnClickListener {
-            // Memanggil callback saat item diklik
-            onItemClick(event.toEventDetail())
+            // Aksi saat item diklik
+            binding.root.setOnClickListener {
+                val intent = Intent(binding.root.context, DetailEventActivity::class.java).apply {
+                    putExtra("id", event.id)
+                }
+                binding.root.context.startActivity(intent)
+            }
         }
     }
 
-    private fun ListEventsItem.toEventDetail(): DetailEventResponse {
-        // Pastikan untuk mengisi semua data yang diperlukan
-        return DetailEventResponse(
-            id = this.id,
-            name = this.name,
-            description = this.description,
-            mediaCover = this.mediaCover,
-            ownerName = this.ownerName,
-            quota = this.quota,
-            registrants = this.registrants,
-            beginTime = this.beginTime,
-            endTime = this.endTime,
-            link = this.link
-        )
+    override fun getItemViewType(position: Int): Int {
+        return if (isUpcoming) {
+            VIEW_TYPE_UPCOMING
+        } else {
+            VIEW_TYPE_FINISHED
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return if (viewType == VIEW_TYPE_UPCOMING) {
+            val binding = ItemEventHorizontalBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            HomeUpcomingEventViewHolder(binding)
+        } else {
+            val binding = ItemEventBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            EventViewHolder(binding)
+        }
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val event = getItem(position)
+        if (holder is HomeUpcomingEventViewHolder) {
+            holder.bind(event)
+        } else if (holder is EventViewHolder) {
+            holder.bind(event)
+        }
     }
 
     companion object {
-        // DiffUtil digunakan untuk mengelola pembaruan data dengan cara lebih efisien
+        private const val VIEW_TYPE_UPCOMING = 1
+        private const val VIEW_TYPE_FINISHED = 2
+
+        // DiffUtil untuk meningkatkan efisiensi pembaruan data
         val DIFF_CALLBACK = object : DiffUtil.ItemCallback<ListEventsItem>() {
             override fun areItemsTheSame(oldItem: ListEventsItem, newItem: ListEventsItem): Boolean {
-                // Bandingkan item berdasarkan ID atau properti unik lainnya
                 return oldItem.id == newItem.id
             }
 
             override fun areContentsTheSame(oldItem: ListEventsItem, newItem: ListEventsItem): Boolean {
-                // Bandingkan seluruh konten item
                 return oldItem == newItem
             }
         }

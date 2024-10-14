@@ -45,6 +45,8 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.browser)
+    implementation (libs.material)
     implementation (libs.glide)
     implementation (libs.androidx.cardview)
     implementation(libs.logging.interceptor)

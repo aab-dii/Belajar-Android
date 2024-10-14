@@ -1,4 +1,4 @@
-package com.abdi.dicodingeventapp.refactor
+package com.abdi.dicodingeventapp.data.refactor
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -8,7 +8,7 @@ import com.abdi.dicodingeventapp.BuildConfig
 
 class ApiConfig {
     companion object{
-        fun getApiService(): ApiService{
+        fun getApiService(): ApiService {
             val loggingInterceptor = if (BuildConfig.DEBUG){
                 HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
             }else {

@@ -15,18 +15,11 @@
         android:theme="@style/Theme.DicodingEventApp"
         tools:targetApi="31">
         <activity
-            android:name=".ui.DetailActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.detail.DetailEventActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailEvent"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name">
+            android:name=".ui.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
