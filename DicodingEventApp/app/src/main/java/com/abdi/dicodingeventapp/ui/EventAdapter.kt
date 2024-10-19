@@ -1,7 +1,6 @@
 package com.abdi.dicodingeventapp.ui
 
 import android.content.Intent
-import android.util.Log
 import androidx.recyclerview.widget.ListAdapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -26,7 +25,6 @@ class EventsAdapter(private val isUpcoming: Boolean = false) : ListAdapter<ListE
 
             // Aksi saat item diklik
             binding.root.setOnClickListener {
-                Log.d("EventsAdapter", "Clicked event ID: ${event.id}")
                 val intent = Intent(binding.root.context, DetailEventActivity::class.java).apply {
                     putExtra("id", event.id)
                 }

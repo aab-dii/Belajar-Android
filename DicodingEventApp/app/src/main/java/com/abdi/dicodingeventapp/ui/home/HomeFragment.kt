@@ -30,24 +30,19 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Inisialisasi adapter
         upcomingEventsAdapter = EventsAdapter(isUpcoming = true)
         finishedEventsAdapter = EventsAdapter(isUpcoming = false)
 
-        // Setup RecyclerView Upcoming Events
         binding.rvUpcoming.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
         binding.rvUpcoming.adapter = upcomingEventsAdapter
 
-        // Setup RecyclerView Finished Events
         binding.rvFinished.layoutManager = LinearLayoutManager(requireContext())
         binding.rvFinished.adapter = finishedEventsAdapter
 
-        // Amati data dari ViewModel untuk Upcoming Events
         viewModel.upcomingEvents.observe(viewLifecycleOwner) { upcomingEvents ->
             upcomingEventsAdapter.submitList(upcomingEvents)
         }
 
-        // Amati data dari ViewModel untuk Finished Events
         viewModel.finishedEvents.observe(viewLifecycleOwner) { finishedEvents ->
             finishedEventsAdapter.submitList(finishedEvents)
         }
@@ -64,6 +59,7 @@ class HomeFragment : Fragment() {
                 ).show()
             }
         })
+
         viewModel.fetchUpcomingEvents()
         viewModel.fetchFinishedEvents()
     }

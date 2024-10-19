@@ -33,6 +33,7 @@ class FinishedFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         eventAdapter = EventsAdapter(isUpcoming = false)
+
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = eventAdapter
 
@@ -42,19 +43,15 @@ class FinishedFragment : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                // Batalkan runnable sebelumnya jika ada
                 searchRunnable?.let { handler.removeCallbacks(it) }
-
                 if (!newText.isNullOrEmpty()) {
-                    // Buat runnable untuk pencarian dengan delay
                     searchRunnable = Runnable {
-
-                        viewModel.searchEvents(newText) // Panggil fungsi pencarian
+                        viewModel.searchEvents(newText)
                     }
                     showLoading()
                     handler.postDelayed(searchRunnable!!, 1000)
                 } else {
-                    // Jika teks pencarian kosong, ambil data awal
+
                     showLoading()
                     viewModel.fetchEvents()
                 }

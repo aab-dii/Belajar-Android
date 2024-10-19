@@ -22,12 +22,11 @@ class HomeViewModel : ViewModel() {
     private val _snackbarText = MutableLiveData<Event<String>>()
     val snackbarText: LiveData<Event<String>> = _snackbarText
 
-    // Fungsi untuk mengambil Upcoming Events
     fun fetchUpcomingEvents() {
         _isLoading.value = true
         ApiConfig.getApiService().getUpcomingEvents().enqueue(object : Callback<EventResponse> {
             override fun onResponse(call: Call<EventResponse>, response: Response<EventResponse>) {
-                _isLoading.value = false // Pastikan loading dinonaktifkan
+                _isLoading.value = false
                 if (response.isSuccessful) {
                     handleUpcomingEventsResponse(response.body())
                 } else {
@@ -36,18 +35,17 @@ class HomeViewModel : ViewModel() {
             }
 
             override fun onFailure(call: Call<EventResponse>, t: Throwable) {
-                _isLoading.value = false // Pastikan loading dinonaktifkan
-                handleError("Tidak ada internet: ${t.message}")
+                _isLoading.value = false
+                handleError("Tidak ada internet")
             }
         })
     }
 
-    // Fungsi untuk mengambil Finished Events
     fun fetchFinishedEvents() {
         _isLoading.value = true
         ApiConfig.getApiService().getFinishedEvents().enqueue(object : Callback<EventResponse> {
             override fun onResponse(call: Call<EventResponse>, response: Response<EventResponse>) {
-                _isLoading.value = false // Pastikan loading dinonaktifkan
+                _isLoading.value = false
                 if (response.isSuccessful) {
                     handleFinishedEventsResponse(response.body())
                 } else {
@@ -56,8 +54,8 @@ class HomeViewModel : ViewModel() {
             }
 
             override fun onFailure(call: Call<EventResponse>, t: Throwable) {
-                _isLoading.value = false // Pastikan loading dinonaktifkan
-                handleError("Tidak ada internet: ${t.message}")
+                _isLoading.value = false
+                handleError("Tidak ada internet")
             }
         })
     }

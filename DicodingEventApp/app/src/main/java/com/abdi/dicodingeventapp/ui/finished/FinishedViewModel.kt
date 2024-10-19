@@ -20,10 +20,7 @@ class FinishedViewModel : ViewModel() {
     private val _snackbarText = MutableLiveData<Event<String>>()
     val snackbarText: LiveData<Event<String>> = _snackbarText
 
-    init {
-        fetchEvents()
-    }
-
+    private var isSnackbarShown = false
     fun fetchEvents() {
         _isLoading.value = true
         ApiConfig.getApiService().getFinishedEvents().enqueue(object : Callback<EventResponse> {
@@ -31,6 +28,7 @@ class FinishedViewModel : ViewModel() {
                 _isLoading.value = false
                 if (response.isSuccessful) {
                     handleSuccessResponse(response.body())
+                    isSnackbarShown = false
                 } else {
                     handleError("Gagal menampilkan event")
                 }
@@ -50,6 +48,8 @@ class FinishedViewModel : ViewModel() {
                 _isLoading.value = false
                 if (response.isSuccessful) {
                     handleSuccessResponse(response.body())
+                    val eventCount = response.body()?.listEvents?.size ?: 0
+                    handleError("Menampilkan $eventCount event")
                 } else {
                     handleError("Gagal menampilkan event")
                 }
@@ -68,5 +68,6 @@ class FinishedViewModel : ViewModel() {
 
     private fun handleError(message: String) {
         _snackbarText.value = Event(message)
+        isSnackbarShown = true
     }
 }

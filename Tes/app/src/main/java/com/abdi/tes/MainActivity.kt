@@ -1,10 +1,7 @@
 package com.abdi.tes
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.abdi.tes.databinding.ActivityMainBinding
@@ -22,31 +19,21 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Mengatur LayoutManager untuk RecyclerView
         val layoutManager = LinearLayoutManager(this)
         binding.recyclerView.layoutManager = layoutManager
 
         // Inisialisasi adapter
-        adapter = EventsAdapter { eventDetail ->
-            openEventDetail(eventDetail)
-        }
+        adapter = EventsAdapter(this)
         binding.recyclerView.adapter = adapter
 
         // Memanggil API untuk mendapatkan daftar event
         getEventList()
-//        getDetailEvent()
-    }
-
-    private fun openEventDetail(eventDetail: EventDetail) {
-        val intent = Intent(this, DetailActivity::class.java).apply {
-            putExtra(DetailActivity.EXTRA_NAME, eventDetail.name)
-            putExtra(DetailActivity.EXTRA_PHOTO, eventDetail.mediaCover) // Gambar event
-        }
-        startActivity(intent)
     }
 
     private fun getEventList() {
         val client = ApiConfig.getApiService().getEvents()
-        client.enqueue(object : Callback<EventResponse> {  // Menggunakan Response
+        client.enqueue(object : Callback<EventResponse> {
             override fun onResponse(
                 call: Call<EventResponse>,
                 response: Response<EventResponse>
@@ -69,5 +56,4 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-
 }

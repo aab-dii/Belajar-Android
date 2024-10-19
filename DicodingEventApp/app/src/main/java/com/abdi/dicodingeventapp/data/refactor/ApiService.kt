@@ -12,7 +12,8 @@ interface ApiService {
     ): Call<EventResponse>
 
     @GET("events/{id}")
-    fun getDetailEvent(@Path("id") id: Int): Call<DetailEventResponse>
+    fun getDetailEvent(@Path("id") id: Int
+    ): Call<DetailEventResponse>
 
     @GET("events")
     fun getUpcomingEvents(

@@ -1,6 +1,5 @@
 package com.abdi.dicodingeventapp.ui.upcoming
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -47,11 +46,12 @@ class UpcomingViewModel : ViewModel() {
                 _isLoading.value = false
                 if (response.isSuccessful) {
                     handleSuccessResponse(response.body())
+                    val eventCount = response.body()?.listEvents?.size ?: 0
+                    handleError("Menampilkan $eventCount event")
                 } else {
                     handleError("Gagal menampilkan event")
                 }
             }
-
             override fun onFailure(call: Call<EventResponse>, t: Throwable) {
                 _isLoading.value = false
                 handleError("Tidak ada koneksi internet")
@@ -65,7 +65,6 @@ class UpcomingViewModel : ViewModel() {
 
     private fun handleError(message: String) {
         _snackbarText.value = Event(message)
-        Log.e("UpcomingViewModel", message) // Log untuk debugging
     }
 
 }

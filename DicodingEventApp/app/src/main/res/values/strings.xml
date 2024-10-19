@@ -4,11 +4,11 @@
     <string name="title_upcoming">Upcoming</string>
     <string name="title_finished">Finished</string>
     <string name="title_main">Dicoding Event</string>
-    <string name="register">Registrasi</string>
+    <string name="register">Daftar</string>
     <string name="upcoming">Upcoming Events</string>
     <string name="finished">Finished Events</string>
     <string name="time_title">Waktu Mulai :</string>
-    <string name="quota_title">Kuota :</string>
+    <string name="quota_title">Sisa Kuota :</string>
     <string name="title_detail">Judul Acara</string>
     <string name="event_image_description">Gambar Acara</string>
     <string name="description">Deskripsi Acara</string>
