@@ -1,5 +1,0 @@
-com.abdi.dicodingevent.test.app-core-1.6.1-0 C:\Users\Abdi\.gradle\caches\transforms-4\8d7c6ee1e57592c30853839c3684e39e\transformed\core-1.6.1\res
-com.abdi.dicodingevent.test.app-androidTest-1 D:\Coding\Android\Belajar Android\DicodingEvent\app\build\generated\res\resValues\androidTest\debug
-com.abdi.dicodingevent.test.app-mergeDebugAndroidTestResources-2 D:\Coding\Android\Belajar Android\DicodingEvent\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-com.abdi.dicodingevent.test.app-mergeDebugAndroidTestResources-3 D:\Coding\Android\Belajar Android\DicodingEvent\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-com.abdi.dicodingevent.test.app-debugAndroidTest-4 D:\Coding\Android\Belajar Android\DicodingEvent\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources

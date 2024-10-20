@@ -1,3 +1,0 @@
-com.abdi.tes.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme

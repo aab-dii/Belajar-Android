@@ -1,3 +1,0 @@
-com.abdi.dicodingevent.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme
