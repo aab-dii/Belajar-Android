@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.abdi.dicodingevent.app-mergeDebugResources-34:/layout/item_event.xml",
+        "source": "com.abdi.dicodingevent.app-main-37:/layout/item_event.xml"
+    },
+    {
+        "merged": "com.abdi.dicodingevent.app-mergeDebugResources-34:/layout/activity_main.xml",
+        "source": "com.abdi.dicodingevent.app-main-37:/layout/activity_main.xml"
+    }
+]

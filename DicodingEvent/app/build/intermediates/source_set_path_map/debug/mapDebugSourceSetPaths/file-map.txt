@@ -1,0 +1,38 @@
+com.abdi.dicodingevent.app-recyclerview-1.1.0-0 C:\Users\Abdi\.gradle\caches\transforms-4\039b7abe6171db87fa7fe418163e7765\transformed\recyclerview-1.1.0\res
+com.abdi.dicodingevent.app-activity-1.9.2-1 C:\Users\Abdi\.gradle\caches\transforms-4\077a5720590b90a40daf050e2995d184\transformed\activity-1.9.2\res
+com.abdi.dicodingevent.app-lifecycle-viewmodel-savedstate-2.8.6-2 C:\Users\Abdi\.gradle\caches\transforms-4\0ac8cf85570379ac250e820dab70f6ba\transformed\lifecycle-viewmodel-savedstate-2.8.6\res
+com.abdi.dicodingevent.app-savedstate-1.2.1-3 C:\Users\Abdi\.gradle\caches\transforms-4\0fabac5999d884ebf020d26fc16b05c1\transformed\savedstate-1.2.1\res
+com.abdi.dicodingevent.app-lifecycle-viewmodel-ktx-2.8.6-4 C:\Users\Abdi\.gradle\caches\transforms-4\103a4873bc77c0b8a5f0217381a28261\transformed\lifecycle-viewmodel-ktx-2.8.6\res
+com.abdi.dicodingevent.app-coordinatorlayout-1.1.0-5 C:\Users\Abdi\.gradle\caches\transforms-4\1966a3c66ccf6291f36312df7b2d7640\transformed\coordinatorlayout-1.1.0\res
+com.abdi.dicodingevent.app-profileinstaller-1.3.1-6 C:\Users\Abdi\.gradle\caches\transforms-4\1ad3e62b1eb99ffd60534acf33f23aef\transformed\profileinstaller-1.3.1\res
+com.abdi.dicodingevent.app-appcompat-resources-1.7.0-7 C:\Users\Abdi\.gradle\caches\transforms-4\1d47642318074e3f223588e70d2ec832\transformed\appcompat-resources-1.7.0\res
+com.abdi.dicodingevent.app-cardview-1.0.0-8 C:\Users\Abdi\.gradle\caches\transforms-4\23282b825bbecee93c03b4148ad6ed0f\transformed\cardview-1.0.0\res
+com.abdi.dicodingevent.app-lifecycle-livedata-ktx-2.8.6-9 C:\Users\Abdi\.gradle\caches\transforms-4\2648320a7ab8a558d3b0a68f4b819871\transformed\lifecycle-livedata-ktx-2.8.6\res
+com.abdi.dicodingevent.app-transition-1.5.0-10 C:\Users\Abdi\.gradle\caches\transforms-4\381339085685711206aed40de2f2cf9a\transformed\transition-1.5.0\res
+com.abdi.dicodingevent.app-material-1.12.0-11 C:\Users\Abdi\.gradle\caches\transforms-4\3bac5b9fc0e3af8f7aabdbe61660b632\transformed\material-1.12.0\res
+com.abdi.dicodingevent.app-lifecycle-livedata-core-2.8.6-12 C:\Users\Abdi\.gradle\caches\transforms-4\3e707118cc1f7325a31dc2914af685eb\transformed\lifecycle-livedata-core-2.8.6\res
+com.abdi.dicodingevent.app-lifecycle-livedata-2.8.6-13 C:\Users\Abdi\.gradle\caches\transforms-4\45378adaf0e102b2d5812af6a91072e4\transformed\lifecycle-livedata-2.8.6\res
+com.abdi.dicodingevent.app-core-1.13.1-14 C:\Users\Abdi\.gradle\caches\transforms-4\4b720f4dbeb4fb352fe32c13fe70f6d8\transformed\core-1.13.1\res
+com.abdi.dicodingevent.app-emoji2-1.3.0-15 C:\Users\Abdi\.gradle\caches\transforms-4\4fd43c4c103cc9cae4142ed4c0a37feb\transformed\emoji2-1.3.0\res
+com.abdi.dicodingevent.app-lifecycle-livedata-core-ktx-2.8.6-16 C:\Users\Abdi\.gradle\caches\transforms-4\5c7abafa2b2ffa51b956154b26a35c50\transformed\lifecycle-livedata-core-ktx-2.8.6\res
+com.abdi.dicodingevent.app-viewpager2-1.0.0-17 C:\Users\Abdi\.gradle\caches\transforms-4\7b55b117d7120a5c6b231c6fb59a9de6\transformed\viewpager2-1.0.0\res
+com.abdi.dicodingevent.app-lifecycle-viewmodel-release-18 C:\Users\Abdi\.gradle\caches\transforms-4\85781fa58bacd6f4c59c0a4e0879948b\transformed\lifecycle-viewmodel-release\res
+com.abdi.dicodingevent.app-lifecycle-runtime-release-19 C:\Users\Abdi\.gradle\caches\transforms-4\8931d9f35607c51b6ed032e3b7b963f0\transformed\lifecycle-runtime-release\res
+com.abdi.dicodingevent.app-appcompat-1.7.0-20 C:\Users\Abdi\.gradle\caches\transforms-4\a18c2ee22c4a34a7da7ad7ebbd8b0af4\transformed\appcompat-1.7.0\res
+com.abdi.dicodingevent.app-glide-4.16.0-21 C:\Users\Abdi\.gradle\caches\transforms-4\a24f8ae4161eb71cc761af417ea0a0d6\transformed\glide-4.16.0\res
+com.abdi.dicodingevent.app-lifecycle-process-2.8.6-22 C:\Users\Abdi\.gradle\caches\transforms-4\a509af9c35d16e33bae392df24201904\transformed\lifecycle-process-2.8.6\res
+com.abdi.dicodingevent.app-core-runtime-2.2.0-23 C:\Users\Abdi\.gradle\caches\transforms-4\a950a6a855ba41f810eb2f2152551b6d\transformed\core-runtime-2.2.0\res
+com.abdi.dicodingevent.app-annotation-experimental-1.4.0-24 C:\Users\Abdi\.gradle\caches\transforms-4\a9a607e47ecd3abc2e02274e0ea2ea1d\transformed\annotation-experimental-1.4.0\res
+com.abdi.dicodingevent.app-drawerlayout-1.1.1-25 C:\Users\Abdi\.gradle\caches\transforms-4\aaaefc55656ea2de04da2483d014c9ac\transformed\drawerlayout-1.1.1\res
+com.abdi.dicodingevent.app-emoji2-views-helper-1.3.0-26 C:\Users\Abdi\.gradle\caches\transforms-4\b29e31708a1e3ac8cb48053372e19492\transformed\emoji2-views-helper-1.3.0\res
+com.abdi.dicodingevent.app-fragment-1.5.4-27 C:\Users\Abdi\.gradle\caches\transforms-4\b77bbfc7a236d2364a37bed5754b01cc\transformed\fragment-1.5.4\res
+com.abdi.dicodingevent.app-core-ktx-1.13.1-28 C:\Users\Abdi\.gradle\caches\transforms-4\d6502883ad47fed5b5227b77ad5426e5\transformed\core-ktx-1.13.1\res
+com.abdi.dicodingevent.app-startup-runtime-1.1.1-29 C:\Users\Abdi\.gradle\caches\transforms-4\f2c7a4aac48158e94e39870128e34a8f\transformed\startup-runtime-1.1.1\res
+com.abdi.dicodingevent.app-constraintlayout-2.1.4-30 C:\Users\Abdi\.gradle\caches\transforms-4\f38561d29e8d18bf40aa043e03b4bcf1\transformed\constraintlayout-2.1.4\res
+com.abdi.dicodingevent.app-pngs-31 D:\Coding\Android\Belajar Android\DicodingEvent\app\build\generated\res\pngs\debug
+com.abdi.dicodingevent.app-resValues-32 D:\Coding\Android\Belajar Android\DicodingEvent\app\build\generated\res\resValues\debug
+com.abdi.dicodingevent.app-packageDebugResources-33 D:\Coding\Android\Belajar Android\DicodingEvent\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.abdi.dicodingevent.app-packageDebugResources-34 D:\Coding\Android\Belajar Android\DicodingEvent\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.abdi.dicodingevent.app-debug-35 D:\Coding\Android\Belajar Android\DicodingEvent\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.abdi.dicodingevent.app-debug-36 D:\Coding\Android\Belajar Android\DicodingEvent\app\src\debug\res
+com.abdi.dicodingevent.app-main-37 D:\Coding\Android\Belajar Android\DicodingEvent\app\src\main\res

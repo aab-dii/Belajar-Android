@@ -1,4 +1,8 @@
 package com.abdi.entity
 
-class Note {
-}
+data class Note(
+    var id: Int = 0,
+    var title: String? = null,
+    var description: String? = null,
+    var date: String? = null
+)
