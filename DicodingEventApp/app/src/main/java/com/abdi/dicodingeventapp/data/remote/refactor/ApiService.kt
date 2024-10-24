@@ -1,7 +1,7 @@
-package com.abdi.dicodingeventapp.data.refactor
+package com.abdi.dicodingeventapp.data.remote.refactor
 
-import com.abdi.dicodingeventapp.data.response.DetailEventResponse
-import com.abdi.dicodingeventapp.data.response.EventResponse
+import com.abdi.dicodingeventapp.data.remote.response.DetailEventResponse
+import com.abdi.dicodingeventapp.data.remote.response.EventResponse
 import retrofit2.Call
 import retrofit2.http.*
 

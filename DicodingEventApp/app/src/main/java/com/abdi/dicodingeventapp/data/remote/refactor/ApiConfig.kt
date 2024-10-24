@@ -1,4 +1,4 @@
-package com.abdi.dicodingeventapp.data.refactor
+package com.abdi.dicodingeventapp.data.remote.refactor
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

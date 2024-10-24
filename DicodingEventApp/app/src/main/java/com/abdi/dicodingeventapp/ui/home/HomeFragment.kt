@@ -59,7 +59,6 @@ class HomeFragment : Fragment() {
                 ).show()
             }
         })
-
         viewModel.fetchUpcomingEvents()
         viewModel.fetchFinishedEvents()
     }

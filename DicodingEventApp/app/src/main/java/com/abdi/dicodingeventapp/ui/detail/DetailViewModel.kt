@@ -3,11 +3,11 @@ package com.abdi.dicodingeventapp.ui.detail
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.abdi.dicodingeventapp.data.response.DetailEventResponse
+import com.abdi.dicodingeventapp.data.remote.response.DetailEventResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import com.abdi.dicodingeventapp.data.refactor.ApiConfig
+import com.abdi.dicodingeventapp.data.remote.refactor.ApiConfig
 import com.abdi.dicodingeventapp.utils.Event
 
 class DetailViewModel : ViewModel() {

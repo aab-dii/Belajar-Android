@@ -20,7 +20,7 @@ class UpcomingFragment : Fragment() {
     private val viewModel: UpcomingViewModel by viewModels()
     private lateinit var eventAdapter: EventsAdapter
     private val handler = Handler(Looper.getMainLooper())
-    private var searchRunnable: Runnable? = null // Untuk menyimpan runnable pencarian
+    private var searchRunnable: Runnable? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,7 +49,7 @@ class UpcomingFragment : Fragment() {
                 if (!newText.isNullOrEmpty()) {
                     searchRunnable = Runnable {
 
-                        viewModel.searchEvents(newText) // Panggil fungsi pencarian
+                        viewModel.searchEvents(newText)
                     }
                     showLoading()
                     handler.postDelayed(searchRunnable!!, 1000)
@@ -62,7 +62,7 @@ class UpcomingFragment : Fragment() {
         })
 
         viewModel.events.observe(viewLifecycleOwner) { events ->
-            eventAdapter.submitList(events) // Memasukkan data event ke adapter
+            eventAdapter.submitList(events)
         }
 
         viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
@@ -70,15 +70,15 @@ class UpcomingFragment : Fragment() {
         }
         showLoading()
 
-        viewModel.snackbarText.observe(viewLifecycleOwner, {
-            it.getContentIfNotHandled()?.let{ snackBarText ->
+        viewModel.snackbarText.observe(viewLifecycleOwner) {
+            it.getContentIfNotHandled()?.let { snackBarText ->
                 Snackbar.make(
                     binding.root,
                     snackBarText,
                     Snackbar.LENGTH_SHORT
                 ).show()
             }
-        })
+        }
         viewModel.fetchEvents()
     }
 

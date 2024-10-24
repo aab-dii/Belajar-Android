@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.abdi.dicodingeventapp.databinding.ItemEventBinding
 import com.abdi.dicodingeventapp.databinding.ItemEventHorizontalBinding // Import layout horizontal
-import com.abdi.dicodingeventapp.data.response.ListEventsItem
+import com.abdi.dicodingeventapp.data.remote.response.ListEventsItem
 import com.abdi.dicodingeventapp.ui.detail.DetailEventActivity
 import com.bumptech.glide.Glide
 

@@ -3,9 +3,9 @@ package com.abdi.dicodingeventapp.ui.finished
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.abdi.dicodingeventapp.data.refactor.ApiConfig
-import com.abdi.dicodingeventapp.data.response.EventResponse
-import com.abdi.dicodingeventapp.data.response.ListEventsItem
+import com.abdi.dicodingeventapp.data.remote.refactor.ApiConfig
+import com.abdi.dicodingeventapp.data.remote.response.EventResponse
+import com.abdi.dicodingeventapp.data.remote.response.ListEventsItem
 import com.abdi.dicodingeventapp.utils.Event
 import retrofit2.Call
 import retrofit2.Callback

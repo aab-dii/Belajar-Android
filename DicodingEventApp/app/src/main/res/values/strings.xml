@@ -13,5 +13,7 @@
     <string name="event_image_description">Gambar Acara</string>
     <string name="description">Deskripsi Acara</string>
     <string name="owner_title">Penyelenggara Acara :</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="title_setting">Setting</string>
 
 </resources>

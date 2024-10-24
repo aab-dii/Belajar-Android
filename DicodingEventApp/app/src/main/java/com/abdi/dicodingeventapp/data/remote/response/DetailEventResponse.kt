@@ -1,4 +1,4 @@
-package com.abdi.dicodingeventapp.data.response
+package com.abdi.dicodingeventapp.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
