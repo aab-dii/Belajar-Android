@@ -1,4 +1,4 @@
-package com.abdi.dicodingeventapp.data.remote.refactor
+package com.abdi.dicodingeventapp.data.remote.retrofit
 
 import com.abdi.dicodingeventapp.data.remote.response.DetailEventResponse
 import com.abdi.dicodingeventapp.data.remote.response.EventResponse
@@ -6,23 +6,25 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface ApiService {
-    @GET("events")
-    fun getFinishedEvents(
-        @Query("active") active: Int = 0
-    ): Call<EventResponse>
-
     @GET("events/{id}")
-    fun getDetailEvent(@Path("id") id: Int
-    ): Call<DetailEventResponse>
+    suspend fun getDetailEvent(@Path("id") id: Int
+    ): DetailEventResponse
 
     @GET("events")
-    fun getUpcomingEvents(
-        @Query("active") active: Int = 1
+    fun getEvents(
+        @Query("active") active: Int
     ): Call<EventResponse>
+
+    @GET("events")
+    fun getHomeEvents(
+        @Query("active") active: Int,
+        @Query("limit") limit: Int = 5
+    ): Call<EventResponse>
+
 
     @GET("events")
     fun searchEvents(
-        @Query("active") active: Int = -1,
+        @Query("active") active: Int,
         @Query("q") keyword: String
     ): Call<EventResponse>
 }

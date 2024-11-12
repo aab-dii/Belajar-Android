@@ -1,76 +1,16 @@
 package com.abdi.dicodingeventapp.ui.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.abdi.dicodingeventapp.data.remote.refactor.ApiConfig
-import com.abdi.dicodingeventapp.data.remote.response.EventResponse
-import com.abdi.dicodingeventapp.data.remote.response.ListEventsItem
-import com.abdi.dicodingeventapp.utils.Event
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.abdi.dicodingeventapp.data.local.EventRepository
 
-class HomeViewModel : ViewModel() {
+class HomeViewModel(private val eventRepository: EventRepository) : ViewModel() {
 
-    private val _upcomingEvents = MutableLiveData<List<ListEventsItem>>()
-    val upcomingEvents: LiveData<List<ListEventsItem>> = _upcomingEvents
-    private val _finishedEvents = MutableLiveData<List<ListEventsItem>>()
-    val finishedEvents: LiveData<List<ListEventsItem>> = _finishedEvents
-    private val _isLoading = MutableLiveData<Boolean>()
-    val isLoading: LiveData<Boolean> = _isLoading
-    private val _snackbarText = MutableLiveData<Event<String>>()
-    val snackbarText: LiveData<Event<String>> = _snackbarText
-
-    fun fetchUpcomingEvents() {
-        _isLoading.value = true
-        ApiConfig.getApiService().getUpcomingEvents().enqueue(object : Callback<EventResponse> {
-            override fun onResponse(call: Call<EventResponse>, response: Response<EventResponse>) {
-                _isLoading.value = false
-                if (response.isSuccessful) {
-                    handleUpcomingEventsResponse(response.body())
-                } else {
-                    handleError("Gagal mengambil upcoming events")
-                }
-            }
-
-            override fun onFailure(call: Call<EventResponse>, t: Throwable) {
-                _isLoading.value = false
-                handleError("Tidak ada internet")
-            }
-        })
+    init {
+        getUpcomingEvent()
+        getFinishedEvent()
     }
 
-    fun fetchFinishedEvents() {
-        _isLoading.value = true
-        ApiConfig.getApiService().getFinishedEvents().enqueue(object : Callback<EventResponse> {
-            override fun onResponse(call: Call<EventResponse>, response: Response<EventResponse>) {
-                _isLoading.value = false
-                if (response.isSuccessful) {
-                    handleFinishedEventsResponse(response.body())
-                } else {
-                    handleError("Gagal mengambil finished events")
-                }
-            }
-
-            override fun onFailure(call: Call<EventResponse>, t: Throwable) {
-                _isLoading.value = false
-                handleError("Tidak ada internet")
-            }
-        })
-    }
-
-    private fun handleUpcomingEventsResponse(eventResponse: EventResponse?) {
-        val events = eventResponse?.listEvents ?: emptyList()
-        _upcomingEvents.value = events.take(5)
-    }
-
-    private fun handleFinishedEventsResponse(eventResponse: EventResponse?) {
-        val events = eventResponse?.listEvents ?: emptyList()
-        _finishedEvents.value = events.take(5)
-    }
-
-    private fun handleError(message: String) {
-        _snackbarText.value = Event(message)
-    }
+    fun getUpcomingEvent()= eventRepository.fetchFromHomeApi(1)
+    fun getFinishedEvent()= eventRepository.fetchFromHomeApi(0)
 }
+

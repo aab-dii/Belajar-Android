@@ -15,5 +15,9 @@
     <string name="owner_title">Penyelenggara Acara :</string>
     <string name="title_favorite">Favorite</string>
     <string name="title_setting">Setting</string>
+    <string name="btn_favorite">Tombol Favorit</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="dark_mode_desc">Enable Dark Mode</string>
+    <string name="no_event">Tidak ada event</string>
 
 </resources>

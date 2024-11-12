@@ -37,6 +37,7 @@ class SettingFragment : Fragment() {
         switchTheme.setOnCheckedChangeListener { _: CompoundButton?, isChecked: Boolean ->
             viewModel.saveThemeSetting(isChecked)
         }
+
     }
 
     override fun onCreateView(

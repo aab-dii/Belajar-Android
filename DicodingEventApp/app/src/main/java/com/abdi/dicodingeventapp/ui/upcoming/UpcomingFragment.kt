@@ -6,18 +6,20 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.abdi.dicodingeventapp.databinding.FragmentUpcomingBinding
 import com.abdi.dicodingeventapp.ui.EventsAdapter
+import com.abdi.dicodingeventapp.ui.ViewModelFactory
+import com.abdi.dicodingeventapp.data.local.Result
 import com.google.android.material.snackbar.Snackbar
 
 class UpcomingFragment : Fragment() {
 
     private var _binding: FragmentUpcomingBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: UpcomingViewModel by viewModels()
     private lateinit var eventAdapter: EventsAdapter
     private val handler = Handler(Looper.getMainLooper())
     private var searchRunnable: Runnable? = null
@@ -33,58 +35,82 @@ class UpcomingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val factory: ViewModelFactory = ViewModelFactory.getInstance(requireActivity())
+        val viewModel: UpcomingViewModel by viewModels {
+            factory
+        }
+
         eventAdapter = EventsAdapter(isUpcoming = false)
+        viewModel.getUpcomingEvent().observe(viewLifecycleOwner) { result ->
+            if (result != null) {
+                when (result) {
+                    is Result.Loading -> {
+                        binding.progressBar.visibility = View.VISIBLE
+                    }
 
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerView.adapter = eventAdapter
+                    is Result.Success -> {
+                        binding.progressBar.visibility = View.GONE
+                        val eventData = result.data
+                        eventAdapter.submitList(eventData)
+                    }
 
-        binding.searchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+                    is Result.Error -> {
+                        binding.progressBar.visibility = View.GONE
+                        Snackbar.make(
+                            binding.root,
+                            "Terjadi kesalahan: ${result.error}",
+                            Snackbar.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+            }
+        }
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
+                query?.let {
+                    viewModel.searchEvent(it)
+                }
+                return true
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                searchRunnable?.let { handler.removeCallbacks(it) }
-
-                if (!newText.isNullOrEmpty()) {
-                    searchRunnable = Runnable {
-
-                        viewModel.searchEvents(newText)
-                    }
-                    showLoading()
-                    handler.postDelayed(searchRunnable!!, 1000)
-                } else {
-                    showLoading()
-                    viewModel.fetchEvents()
+                newText?.let {
+                    viewModel.searchEvent(it)
                 }
                 return true
             }
         })
 
-        viewModel.events.observe(viewLifecycleOwner) { events ->
-            eventAdapter.submitList(events)
-        }
-
-        viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
-            binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
-        }
-        showLoading()
-
-        viewModel.snackbarText.observe(viewLifecycleOwner) {
-            it.getContentIfNotHandled()?.let { snackBarText ->
-                Snackbar.make(
-                    binding.root,
-                    snackBarText,
-                    Snackbar.LENGTH_SHORT
-                ).show()
+        viewModel.searchResults.observe(viewLifecycleOwner) { result ->
+            when (result) {
+                is Result.Loading -> {
+                    binding.progressBar.visibility = View.VISIBLE
+                }
+                is Result.Success -> {
+                    binding.progressBar.visibility = View.GONE
+                    val events = result.data
+                    if (events.isNotEmpty()) {
+                        eventAdapter.submitList(events)
+                        binding.tvNoEvents.visibility = View.GONE
+                    } else {
+                        binding.tvNoEvents.visibility = View.VISIBLE
+                    }
+                }
+                is Result.Error -> {
+                    binding.progressBar.visibility = View.GONE
+                    Snackbar.make(
+                        binding.root,
+                        "Terjadi kesalahan: ${result.error}",
+                        Snackbar.LENGTH_SHORT
+                    ).show()
+                }
             }
         }
-        viewModel.fetchEvents()
-    }
 
-    private fun showLoading(){
-        viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
-            binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+        binding.recyclerView.apply {
+            layoutManager = LinearLayoutManager(context)
+            setHasFixedSize(true)
+            adapter = eventAdapter
         }
     }
 

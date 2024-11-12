@@ -1,11 +1,10 @@
-package com.abdi.dicodingeventapp.ui
+package com.abdi.dicodingeventapp.ui.main
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.abdi.dicodingeventapp.R
@@ -40,7 +39,6 @@ class MainActivity : AppCompatActivity() {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
         }
-//        supportActionBar?.hide()
     }
 
 }

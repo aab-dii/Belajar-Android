@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.devtools.ksp") version "1.9.0-1.0.13"
+    id("kotlin-parcelize")
 }
 
 android {
@@ -13,7 +15,7 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
+        buildConfigField("String", "BASE_URL", "\"https://event-api.dicoding.dev/\"")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -44,6 +46,10 @@ android {
 }
 
 dependencies {
+    implementation (libs.androidx.room.ktx)
+    implementation (libs.room.runtime.v250)
+    implementation(libs.androidx.work.runtime.ktx)
+    ksp (libs.room.compiler.v250)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.browser)

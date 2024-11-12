@@ -6,34 +6,30 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.abdi.dicodingeventapp.databinding.ItemEventBinding
-import com.abdi.dicodingeventapp.databinding.ItemEventHorizontalBinding // Import layout horizontal
 import com.abdi.dicodingeventapp.data.remote.response.ListEventsItem
+import com.abdi.dicodingeventapp.databinding.ItemEventBinding
+import com.abdi.dicodingeventapp.databinding.ItemEventHorizontalBinding
 import com.abdi.dicodingeventapp.ui.detail.DetailEventActivity
 import com.bumptech.glide.Glide
 
 class EventsAdapter(private val isUpcoming: Boolean = false) : ListAdapter<ListEventsItem, RecyclerView.ViewHolder>(DIFF_CALLBACK) {
 
-    // ViewHolder untuk finished event
     class EventViewHolder(private val binding: ItemEventBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(event: ListEventsItem) {
             binding.tvTitle.text = event.name
-
             Glide.with(binding.root.context)
                 .load(event.mediaCover)
                 .into(binding.imgEvent)
 
-            // Aksi saat item diklik
             binding.root.setOnClickListener {
                 val intent = Intent(binding.root.context, DetailEventActivity::class.java).apply {
-                    putExtra("id", event.id)
+                    putExtra("EVENT_ID", event.id)
                 }
                 binding.root.context.startActivity(intent)
             }
         }
     }
 
-    // ViewHolder untuk upcoming event
     class HomeUpcomingEventViewHolder(private val binding: ItemEventHorizontalBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(event: ListEventsItem) {
             binding.tvTitle.text = event.name
@@ -42,10 +38,9 @@ class EventsAdapter(private val isUpcoming: Boolean = false) : ListAdapter<ListE
                 .load(event.mediaCover)
                 .into(binding.imgEvent)
 
-            // Aksi saat item diklik
             binding.root.setOnClickListener {
                 val intent = Intent(binding.root.context, DetailEventActivity::class.java).apply {
-                    putExtra("id", event.id)
+                    putExtra("EVENT_ID", event.id)
                 }
                 binding.root.context.startActivity(intent)
             }
@@ -83,7 +78,6 @@ class EventsAdapter(private val isUpcoming: Boolean = false) : ListAdapter<ListE
         private const val VIEW_TYPE_UPCOMING = 1
         private const val VIEW_TYPE_FINISHED = 2
 
-        // DiffUtil untuk meningkatkan efisiensi pembaruan data
         val DIFF_CALLBACK = object : DiffUtil.ItemCallback<ListEventsItem>() {
             override fun areItemsTheSame(oldItem: ListEventsItem, newItem: ListEventsItem): Boolean {
                 return oldItem.id == newItem.id
